@@ -21,6 +21,13 @@ class _CorpoState extends State<Corpo> {
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
               title: Text(lista.getElemento(index)),
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('você selecionou: ${index + 1}'),
+                  ),
+                );
+              },
             ),
           );
         });
